@@ -1,0 +1,1543 @@
+﻿{
+  "uid": "04974834-f3f3-4fd3-954c-dcfb2d61b4e3",
+  "type": "OpcUA",
+  "version": "1.0.0",
+  "dataVersioningEnabled": false,
+  "versionNo": 16777216,
+  "tenantId": "abd02998-75c1-4d47-a0e6-330f79804748",
+  "instanceId": "22cbacc4-a15e-4af0-9b41-426de5fa980a",
+  "name": "NightWatch Hackathon Simulation",
+  "alertChartsEnabled": false,
+  "chartGeneratorRemoteActorPath": "akka.tcp://NightWatchCharts@localhost:8888/user/chartgenerator",
+  "chartGeneratorConfiguratorRemoteActorPath": "akka.tcp://NightWatchCharts@localhost:8888/user/chartgeneratorconfig",
+  "simulationDataGenerationIntervalInSeconds": 1,
+  "modbusRetryPolicy": {
+    "type": "modbus_retry_policy",
+    "waitToRetryMilliseconds": 250,
+    "maxRetries": 3,
+    "slaveBusyUsesRetryCount": false
+  },
+  "tcpRetryPolicy": {
+    "type": "tcp_retry_policy",
+    "waitToRetryMilliseconds": 10000
+  },
+  "serialPortRetryPolicy": {
+    "type": "serialport_retry_policy",
+    "waitToRetryMilliseconds": 10000
+  },
+  "mqBrokerRetryPolicy": {
+    "type": "mqbroker_retry_policy",
+    "waitToRetryMilliseconds": 10000
+  },
+  "deviceGroups": [
+    {
+      "type": "device_group",
+      "deviceCount": 1,
+      "devices": [
+        {
+          "type": "device",
+          "deviceType": "OpcUA",
+          "enabled": true,
+          "discardAllOnError": false,
+          "ipAddress": "opc.tcp://127.0.0.1:49320",
+          "portNo": 0,
+          "pollIntervalInMilliseconds": 5000,
+          "unitGroups": [
+            {
+              "type": "unit_group",
+              "unitCount": 1,
+              "units": [
+                {
+                  "type": "unit",
+                  "unitId": 0,
+                  "readingDefinitions": [
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 0,
+                      "dataType": "UInt32",
+                      "formulaNames": ["Adet"],
+                      "formulaNamesAsCsv": "Adet",
+                      "isResidual": false,
+                      "variableName": "a",
+                      "isVariable": true,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "signalType": "COUNT",
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "Number",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 1,
+                          "endValue": 300,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {
+                            "keepLastValueIntervalInSecs": 5
+                          }
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "86a673cc-d8f1-4dbc-b3bc-ecad037348d6",
+                      "name": "ns=2;s=Channel1.Device1.Counter",
+                      "displayName": "1. Saya\u00E7"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 2,
+                      "dataType": "Float",
+                      "formulaNames": ["S\u0131cakl\u0131k"],
+                      "formulaNamesAsCsv": "S\u0131cakl\u0131k",
+                      "isResidual": false,
+                      "variableName": "c",
+                      "isVariable": true,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": true,
+                        "excludeFromOee": true,
+                        "mesProcess": false,
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "GaussianNumber",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 40,
+                          "deviation": 60,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "cd3fd049-73ce-4b59-ac70-73eddbbb3781",
+                      "name": "ns=2;s=Channel1.Device1.Temperature",
+                      "displayName": "3. S\u0131cakl\u0131k"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 2,
+                      "dataType": "Float",
+                      "formulaNames": ["Adet"],
+                      "formulaNamesAsCsv": "Adet",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "signalType": "PROD_ERROR",
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "GaussianNumber",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 4,
+                          "deviation": 2,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {
+                            "keepLastValueIntervalInSecs": 10
+                          }
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "c9a515d7-9931-4409-90a7-cc8e83e6bb09",
+                      "name": "ns=2;s=Channel1.Device1.ProdErrorCounter",
+                      "displayName": "2. Iskarta"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 2,
+                      "dataType": "Float",
+                      "formulaNames": ["Bas\u0131n\u00E7"],
+                      "formulaNamesAsCsv": "Bas\u0131n\u00E7",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": true,
+                        "excludeFromOee": true,
+                        "mesProcess": false,
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "GaussianNumber",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 1500,
+                          "deviation": 500,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "6ef51c09-80af-47f1-aa32-8f87837778f2",
+                      "name": "ns=2;s=Channel1.Device1.Pressure",
+                      "displayName": "4. Bas\u0131n\u00E7"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 0,
+                      "dataType": "Boolean",
+                      "formulaNames": ["Default"],
+                      "formulaNamesAsCsv": "Default",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "signalType": "STOP",
+                        "signalCategory": "PLANNED",
+                        "stopStartValue": "1",
+                        "stopEndValue": "0",
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "None",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {
+                            "keepLastValueIntervalInSecs": 5
+                          }
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "dcba44fb-71bf-437d-8ff5-228f40041039",
+                      "name": "ns=2;s=Channel1.Device1.PlannedStoppage",
+                      "displayName": "5. Planl\u0131 Duru\u015F"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 0,
+                      "dataType": "Boolean",
+                      "formulaNames": ["Default"],
+                      "formulaNamesAsCsv": "Default",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "signalType": "STOP",
+                        "stopStartValue": "1",
+                        "stopEndValue": "0",
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "None",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {
+                            "keepLastValueIntervalInSecs": 5
+                          }
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "cca2b2dc-cb0e-4520-bd16-0d326fe3c97d",
+                      "name": "ns=2;s=Channel1.Device1.UnplannedStoppage",
+                      "displayName": "6. Plans\u0131z Duru\u015F"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 0,
+                      "dataType": "String",
+                      "formulaNames": ["Default"],
+                      "formulaNamesAsCsv": "Default",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expressionInfo": "...",
+                      "isExpression": false,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "None",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {
+                            "keepLastValueIntervalInSecs": 20
+                          }
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "0708cf05-c22c-4598-acd2-27217dbddac9",
+                      "name": "ns=2;s=Channel1.Device1.StockNo",
+                      "displayName": "7. Stok/\u0130\u015F Emri"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 0,
+                      "dataType": "UInt32",
+                      "formulaNames": ["Koli"],
+                      "formulaNamesAsCsv": "Koli",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expression": "return a/12.0;",
+                      "expressionInfo": "return a/12.0;",
+                      "isExpression": true,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "None",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "e356962e-d018-468f-a30b-b2d2b61a1732",
+                      "name": "Counter",
+                      "displayName": "Saya\u00E7 (Koli)"
+                    },
+                    {
+                      "type": "reading_def",
+                      "enabled": true,
+                      "address": 0,
+                      "numberOfPoints": 2,
+                      "dataType": "Float",
+                      "formulaNames": ["Fahrenheit"],
+                      "formulaNamesAsCsv": "Fahrenheit",
+                      "isResidual": false,
+                      "isVariable": false,
+                      "expression": "return (c* 1.8)\u002B32;",
+                      "expressionInfo": "return (c* 1.8)\u002B32;",
+                      "isExpression": true,
+                      "useAdvancedEvaluatorMethod": false,
+                      "slice": {},
+                      "hasSlice": false,
+                      "extraProps": {
+                        "processOnChange": false,
+                        "doNotPublishToSinks": false,
+                        "hideFromDashboard": false,
+                        "mesDoNotProcess": false,
+                        "excludeFromOee": false,
+                        "mesProcess": true,
+                        "discardAllCounters": false,
+                        "discardCounterUids": [],
+                        "isLongCycleCounter": false,
+                        "resetPulseCounterUids": [],
+                        "hasValidResetPulseCounterUid": false,
+                        "isValidCycleSignalForUndefinedStoppage": false,
+                        "isValidCycleTypeForUndefinedStoppage": false
+                      },
+                      "plcDataType": "None",
+                      "plcDataBlock": 0,
+                      "plcArraySize": 1,
+                      "isPlcArray": false,
+                      "bitAdr": 0,
+                      "path": "1,0",
+                      "isSystemGeneratedSignal": false,
+                      "simulation": {
+                        "type": "simulation_option",
+                        "generatorType": "None",
+                        "randomNumberGeneration": {
+                          "minValue": 0,
+                          "maxValue": 100,
+                          "onlyPositiveValues": true,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "gaussianNumberGeneration": {
+                          "mean": 100,
+                          "deviation": 40,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "numberGeneration": {
+                          "startValue": 0,
+                          "endValue": 100,
+                          "incrementBy": 1,
+                          "rounding": {
+                            "roundTo": 0
+                          },
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "booleanGeneration": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "guidGeneratorOptions": {
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "dateTimeGeneratorOptions": {
+                          "pickAndIterate": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        },
+                        "stringGeneratorOptions": {
+                          "asFileName": false,
+                          "asFilePath": false,
+                          "asDirectory": false,
+                          "array": {
+                            "arrayItemCount": 12,
+                            "isArray": false
+                          },
+                          "timing": {}
+                        }
+                      },
+                      "displayOrder": 0,
+                      "uid": "8cebc01e-9de6-4e8f-9eda-376ddb7e4385",
+                      "name": "Fahrenheit",
+                      "displayName": "S\u0131cakl\u0131k (F)"
+                    }
+                  ],
+                  "readingDefinitionCount": 9,
+                  "undefinedStoppagesDisabled": false,
+                  "displayOrder": 0,
+                  "uid": "ec23ec53-0f4c-4ae2-baf2-70c832d83774",
+                  "name": "Default"
+                }
+              ],
+              "displayOrder": 0,
+              "uid": "d342e050-0be7-42ff-a9bd-74e93e0f2368",
+              "name": "Default"
+            }
+          ],
+          "unitGroupCount": 1,
+          "publishResidualValues": false,
+          "addResidualsToRelatedReadings": true,
+          "plcClientConfig": {
+            "cpuType": "S7200",
+            "rack": 0,
+            "slot": 0,
+            "parsePlcAddressesFromName": false
+          },
+          "libPlcClientConfig": {
+            "plcType": "ControlLogix",
+            "protocol": "ab_eip",
+            "timeoutInMilliseconds": 5000
+          },
+          "opcUaClientConfig": {
+            "isAnonymousClient": true,
+            "sessionTimeout": 10000,
+            "defaultSessionTimeout": 60000,
+            "sessionCloseTimeout": 10000,
+            "operationTimeout": 15000,
+            "reconnectPeriod": 10000,
+            "applicationCertificate": {
+              "storeType": "Directory",
+              "storePath": "%CommonApplicationData%\\OPC Foundation\\CertificateStores\\MachineDefault",
+              "subjectName": "CN=NIGHTWATCHCLIENT, DC=TREX"
+            },
+            "trustedIssuerCertificates": {
+              "storeType": "Directory",
+              "storePath": "%CommonApplicationData%\\OPC Foundation\\CertificateStores\\UA Certificate Authorities"
+            },
+            "trustedPeerCertificates": {
+              "storeType": "Directory",
+              "storePath": "%CommonApplicationData%\\\\OPC Foundation\\\\CertificateStores\\\\UA Applications\u0022"
+            },
+            "rejectedCertificateStore": {
+              "storeType": "Directory",
+              "storePath": "%CommonApplicationData%\\OPC Foundation\\CertificateStores\\RejectedCertificates"
+            }
+          },
+          "opcUaUseSubscriptions": false,
+          "discardBadQualitySignals": false,
+          "serialPortConfg": {},
+          "numberOfRawDataProcessTasks": 5,
+          "effectiveNumberOfRawDataProcessTasks": 5,
+          "mqBrokerType": "None",
+          "mqttDataCollectorConfig": {
+            "connection": {
+              "port": 1883,
+              "cleanSession": true,
+              "autoReconnectDelayInSeconds": 5,
+              "maxPendingMessages": 100,
+              "hasCredentials": false
+            },
+            "qos": "ExactlyOnce",
+            "isTimestampUtc": false,
+            "messageDeserializerType": "None",
+            "deserializerClassSourceCode": ""
+          },
+          "rabbitDataCollectorConfig": {
+            "connection": {
+              "virtualHost": "/",
+              "port": 5672
+            },
+            "isTimestampUtc": false,
+            "messageDeserializerType": "None",
+            "deserializerClassSourceCode": ""
+          },
+          "redisDataCollectorConfig": {
+            "connection": {},
+            "isTimestampUtc": false,
+            "messageDeserializerType": "None",
+            "deserializerClassSourceCode": ""
+          },
+          "useMethods": true,
+          "advancedMethods": [],
+          "simulation": [],
+          "displayOrder": 0,
+          "uid": "fc8298d7-45ba-4bde-b1fb-969109d6104d",
+          "name": "Default"
+        }
+      ],
+      "displayOrder": 0,
+      "uid": "16838057-dc9f-411b-b59a-253474152dd0",
+      "name": "Default"
+    }
+  ],
+  "numericFormulas": [
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 ",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "c7b88fe8-94dd-4e17-ae84-d2707aae694f",
+      "name": "Default"
+    },
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 Adet",
+      "measurementUnit": "Adet",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "dfb66149-f98b-41db-be14-9af4e7e44a58",
+      "name": "Adet"
+    },
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 Santigrad",
+      "measurementUnit": "Santigrad",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "9120179e-b8c7-40c2-add9-f8012297a1f3",
+      "name": "S\u0131cakl\u0131k"
+    },
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 PSI",
+      "measurementUnit": "PSI",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "4f8cc2ca-fb74-4182-ba36-fcf9a2f57b97",
+      "name": "Bas\u0131n\u00E7"
+    },
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 F",
+      "measurementUnit": "F",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "94efdf48-b53d-4faa-be72-48743d17c4e7",
+      "name": "Fahrenheit"
+    },
+    {
+      "type": "numeric_formula",
+      "formulaString": "(value / 1) * 1 Koli",
+      "measurementUnit": "Koli",
+      "divisor": 1,
+      "multiplier": 1,
+      "enabled": true,
+      "displayOrder": 0,
+      "uid": "70accbed-9441-4990-89c4-7fe6e0a355ae",
+      "name": "Koli"
+    }
+  ],
+  "chartScreens": {
+    "type": "chart_screens",
+    "screens": [
+      {
+        "type": "chart_screen",
+        "enabled": true,
+        "name": "Takip Ekran\u0131",
+        "displayOrder": 0,
+        "displayDurationInSeconds": 10,
+        "widgets": [
+          {
+            "type": "chart_screen_widget",
+            "displayOrder": 0,
+            "widgetUid": "d0cb3302-7a12-43c5-afc5-69d8835693cd",
+            "widthPercent": 49,
+            "height": 360
+          },
+          {
+            "type": "chart_screen_widget",
+            "displayOrder": 10,
+            "widgetUid": "c80ff958-95a0-4d2b-976a-bd0d58609d44",
+            "widthPercent": 49,
+            "height": 360
+          },
+          {
+            "type": "chart_screen_widget",
+            "displayOrder": 20,
+            "widgetUid": "28bfe1a0-3dc3-4c51-aff5-f367671ccc83",
+            "widthPercent": 49,
+            "height": 360
+          },
+          {
+            "type": "chart_screen_widget",
+            "displayOrder": 30,
+            "widgetUid": "758a14e5-4ce7-4771-a6db-23d1a1e110af",
+            "widthPercent": 49,
+            "height": 360
+          }
+        ],
+        "widgetCount": 4
+      }
+    ]
+  },
+  "widgets": [
+    {
+      "enabled": true,
+      "uid": "d0cb3302-7a12-43c5-afc5-69d8835693cd",
+      "name": "Saya\u00E7/Iskarta",
+      "chartType": "Bar_Vertical",
+      "readingDefinitions": [
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.Counter",
+          "displayName": "1. Saya\u00E7",
+          "formulaName": "Adet",
+          "measurementUnit": "Adet",
+          "key": "ns=2;s=Channel1.Device1.Counter::Adet:Adet",
+          "keyHash_Sha1": "ded6c735a73797acf3c5829ec5fabde02867eecb"
+        },
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.ProdErrorCounter",
+          "displayName": "2. Iskarta",
+          "formulaName": "Adet",
+          "measurementUnit": "Adet",
+          "key": "ns=2;s=Channel1.Device1.ProdErrorCounter::Adet:Adet",
+          "keyHash_Sha1": "f5d17c126811e9e9a74290e98e7c921e6effe179"
+        }
+      ],
+      "readingDefinitionCount": 2
+    },
+    {
+      "enabled": true,
+      "uid": "28bfe1a0-3dc3-4c51-aff5-f367671ccc83",
+      "name": "Bas\u0131n\u00E7",
+      "chartType": "Line",
+      "readingDefinitions": [
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.Pressure",
+          "displayName": "4. Bas\u0131n\u00E7",
+          "formulaName": "Bas\u0131n\u00E7",
+          "measurementUnit": "PSI",
+          "key": "ns=2;s=Channel1.Device1.Pressure::Bas\u0131n\u00E7:PSI",
+          "keyHash_Sha1": "7f6d5b5572d2f6648eaea3b022c162f2783537c9"
+        }
+      ],
+      "readingDefinitionCount": 1
+    },
+    {
+      "enabled": true,
+      "uid": "758a14e5-4ce7-4771-a6db-23d1a1e110af",
+      "name": "S\u0131cakl\u0131k",
+      "chartType": "Line",
+      "readingDefinitions": [
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.Temperature",
+          "displayName": "3. S\u0131cakl\u0131k",
+          "formulaName": "S\u0131cakl\u0131k",
+          "measurementUnit": "Santigrad",
+          "key": "ns=2;s=Channel1.Device1.Temperature::S\u0131cakl\u0131k:Santigrad",
+          "keyHash_Sha1": "8b1d65799fde18eddc95397b5c727306f1058193"
+        }
+      ],
+      "readingDefinitionCount": 1
+    },
+    {
+      "enabled": true,
+      "uid": "c80ff958-95a0-4d2b-976a-bd0d58609d44",
+      "name": "Duru\u015Flar",
+      "chartType": "StatRectangles",
+      "readingDefinitions": [
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.PlannedStoppage",
+          "displayName": "5. Planl\u0131 Duru\u015F",
+          "formulaName": "Default",
+          "key": "ns=2;s=Channel1.Device1.PlannedStoppage::Default:",
+          "keyHash_Sha1": "402a951fab1ba69ffe33c4427e59c98725b78ddb"
+        },
+        {
+          "enabled": false,
+          "name": "ns=2;s=Channel1.Device1.UnplannedStoppage",
+          "displayName": "6. Plans\u0131z Duru\u015F",
+          "formulaName": "Default",
+          "key": "ns=2;s=Channel1.Device1.UnplannedStoppage::Default:",
+          "keyHash_Sha1": "b7c767964c88f4c10e1c4f2012f0bb111be119c7"
+        }
+      ],
+      "readingDefinitionCount": 2
+    }
+  ],
+  "smtpChannels": [],
+  "telegramChannels": [],
+  "webHookChannels": [],
+  "alerts": [
+    {
+      "type": "alert",
+      "enabled": true,
+      "readingDefinitionName": "ns=2;s=Channel1.Device1.Pressure",
+      "readingDefinitionFormulaName": "Bas\u0131n\u00E7",
+      "measurementUnit": "PSI",
+      "value": 1700,
+      "triggerWhen": "ValueAbove",
+      "notifyWhenEnds": true,
+      "effectiveThreshold": 1700,
+      "trackDurationInSeconds": 20,
+      "evalIntervalInSeconds": 3,
+      "channelNotifications": [],
+      "sinkNotifications": [
+        {
+          "type": "alert_sink_notification",
+          "sinkType": "MQTT",
+          "sinkConfigUid": "1382baf8-63e3-45b3-8000-fa79e8849c0b",
+          "enabled": true,
+          "unitUidsFilter": [],
+          "unitUidsFilterCount": 0,
+          "displayOrder": 0,
+          "uid": "3c06de57-d47b-4a83-8035-3506923bb503",
+          "name": "MQTT Notification"
+        }
+      ],
+      "unitUidsFilter": [],
+      "unitUidsFilterCount": 0,
+      "isExpression": false,
+      "conditionText": "Evaluate every 3 seconds for 20 seconds and alert when \u0027ns=2;s=Channel1.Device1.Pressure\u0027 is above 1700 PSI",
+      "attachLatestValuesAsChart": false,
+      "displayOrder": 0,
+      "uid": "774bd76c-08b1-4b81-a56c-2ed6642afcfb",
+      "name": "Bas\u0131n\u00E7 Alarm\u0131"
+    }
+  ],
+  "itemRefs": [],
+  "mqttSinks": [
+    {
+      "type": "mqtt_sink",
+      "sinkType": "MQTT",
+      "maxPendingMessages": 1000,
+      "autoReconnectDelayInSeconds": 10,
+      "cleanSession": true,
+      "protocolVersion": "V311",
+      "topics": [],
+      "server": "10.16.17.60",
+      "port": 5672,
+      "username": "guest",
+      "plainTextPassword": "guest",
+      "uid": "1382baf8-63e3-45b3-8000-fa79e8849c0b",
+      "id": "1382baf8-63e3-45b3-8000-fa79e8849c0b",
+      "enabled": true,
+      "name": "MQTT Alert",
+      "sinkKind": "Alert"
+    },
+    {
+      "type": "mqtt_sink",
+      "sinkType": "MQTT",
+      "maxPendingMessages": 1000,
+      "autoReconnectDelayInSeconds": 10,
+      "cleanSession": true,
+      "protocolVersion": "V311",
+      "topics": [
+        {
+          "qualityOfServiceLevel": "AtMostOnce",
+          "enabled": true,
+          "publishType": "Unit_Flat",
+          "alertPublishType": "None",
+          "mesMode": "None"
+        }
+      ],
+      "server": "10.16.17.60",
+      "port": 5672,
+      "username": "guest",
+      "plainTextPassword": "guest",
+      "uid": "2a6cca2b-b381-4007-827b-e85833e47395",
+      "id": "2a6cca2b-b381-4007-827b-e85833e47395",
+      "enabled": true,
+      "name": "MQTT Integration",
+      "sinkKind": "Integration"
+    }
+  ],
+  "redisSinks": [],
+  "rabbitSinks": [],
+  "ModbusDataDbSinks": [
+    {
+      "type": "db_sink",
+      "sinkType": "Database",
+      "sinkKind": "Integration",
+      "connectionStringEnc": "K/ygsC3XbIRLxdUzo4HJdyxCbO2mUs79Ub4gz22gPwyhDmxUWG/DWJVvqgDHPUUpz2ZEjZDXnCWxQDj9n5AWsQ89iaJgI1sLMtwH13lJR3w=",
+      "plainTextConnectionString": "Server=10.16.17.55;Port=5432;User Id=postgres;Password=postgres;Database=ormandb;",
+      "dbType": "pgsql",
+      "discardZeroValues": false,
+      "discardEmptyString": false,
+      "discardEmptyGuid": false,
+      "discardMinDateTime": false,
+      "doNotPublishValues": false,
+      "publishOnlyLatestStringValues": false,
+      "publishOnlyLatestGuidValues": false,
+      "publishOnlyLatestDateTimeValues": false,
+      "mqttWorkOrderSubscribers": [],
+      "redisWorkOrderSubscribers": [],
+      "rabbitWorkOrderSubscribers": [],
+      "workOrderSubscribers": [],
+      "uid": "41a89a6b-266a-4797-b615-20b4898cc1a7",
+      "id": "41a89a6b-266a-4797-b615-20b4898cc1a7",
+      "enabled": true,
+      "name": "PostgreSQL"
+    }
+  ],
+  "dcasEnergySinks": [],
+  "webHookSinks": [],
+  "opcUaSinks": [],
+  "dcasPanelSinks": [],
+  "influxDbSinks": [],
+  "easyThingsDataSinks": [],
+  "reThinkDbSinks": [],
+  "useUndefinedStoppageGenerator": false
+}
